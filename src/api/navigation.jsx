@@ -235,6 +235,11 @@ const navigation = [
   //     },
   //   ],
   // },
+  {
+    name: "Coupons",
+    url: "/coupons",
+    icon: <Icons.TbTicket className="menu_icon" />,
+  },
 ];
 
 export default navigation;

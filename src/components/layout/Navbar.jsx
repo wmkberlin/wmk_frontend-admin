@@ -5,10 +5,13 @@ import Input from '../common/Input.jsx';
 import Profile from '../common/Profile.jsx';
 import ProfileImg from '../../images/common/adminProfile.png';
 
+// ... existing code ...
 const Navbar = () => {
+  const infoString = localStorage.getItem("info");
+  const info = infoString ? JSON.parse(infoString) : {};
   const [user] = useState({
-    username: JSON.parse(localStorage?.info)?.name || "" ,
-    email: JSON.parse(localStorage?.info)?.email || "",
+    username: info.name || "",
+    email: info.email || "",
   });
 
   return (

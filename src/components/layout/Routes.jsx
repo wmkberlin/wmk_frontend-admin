@@ -73,6 +73,8 @@ import LocalDelivery from "../../pages/pages/LocalDelivery.jsx";
 import LocalDeliveryPage from "../../pages/pages/LocalDeliverySetting.jsx";
 import SoldOutProducts from "../../pages/products/SoldOutProduct.jsx";
 import ManageNewsLetter from "../../pages/pages/ManageNewsletter.jsx";
+import CouponList from "../../components/coupons/CouponList";
+import CouponForm from "../../components/coupons/CouponForm";
 // import AddSubCategory from "../../pages/categories/AddSubCategory.jsx";
 
 // Sorting and Comments
@@ -287,6 +289,19 @@ const routes = [
   {
     path: "/setting/api",
     element: <Api />,
+  },
+  // Coupons
+  {
+    path: "/coupons",
+    element: <PrivateRoute element={<CouponList />} />,
+  },
+  {
+    path: "/coupons/create",
+    element: <PrivateRoute element={<CouponForm />} />,
+  },
+  {
+    path: "/coupons/:id",
+    element: <PrivateRoute element={<CouponForm />} />,
   },
   // Not Found
   {
