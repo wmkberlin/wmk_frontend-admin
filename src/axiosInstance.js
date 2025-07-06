@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create an Axios instance
 const axiosInstance = axios.create({
-    baseURL: "https://wmk-backend.onrender.com/api",  // Adjust API URL accordingly
+    baseURL: "https://wmk-backend.onrender.com/api",  // Main API URL
     headers: {
         "Content-Type": "application/json",
     }

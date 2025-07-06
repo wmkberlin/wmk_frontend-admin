@@ -100,13 +100,21 @@ const CouponForm = () => {
         await updateCoupon(id, form);
         setSuccess('Coupon updated successfully!');
       } else {
-        await createCoupon(form);
+        const data = await createCoupon(form);
+        console.log(data);
         setSuccess('Coupon created successfully!');
         setForm(defaultForm);
       }
       setTimeout(() => navigate('/coupons'), 1000);
     } catch (err) {
-      setError('Failed to save coupon. Please check your input.');
+      // Try to extract a meaningful error message from the backend
+      let message = 'Failed to save coupon. Please check your input.';
+      if (err.response && err.response.data && err.response.data.message) {
+        message = err.response.data.message;
+      } else if (err.message) {
+        message = err.message;
+      }
+      setError(message);
     }
   };
 
